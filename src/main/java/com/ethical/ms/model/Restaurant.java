@@ -13,27 +13,37 @@ public class Restaurant {
 	@GeneratedValue
 	private int id;
 	private String name;
+	private String email;
 	private String address;
 	private String city;
 	private String country;
 	private String pincode;
 	private String owner;
-	private double rate;
+	private double rating;
 	private String website;
 	private String googleMap;
 	
-	public Restaurant(String name, String address, String city, String country, String pincode, String owner,
-			double rate, String website, String googleMap) {
+	
+	public Restaurant(String name, String email, String address, String city, String country, String pincode, String owner,
+			double rating, String website, String googleMap) {
 		super();
 		this.name = name;
+		this.email = email;
 		this.address = address;
 		this.city = city;
 		this.country = country;
 		this.pincode = pincode;
 		this.owner = owner;
-		this.rate = rate;
+		this.rating = rating;
 		this.website = website;
 		this.googleMap = googleMap;
+	}
+
+	@Override
+	public String toString() {
+		return "[id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + ", city=" + city
+				+ ", country=" + country + ", pincode=" + pincode + ", owner=" + owner + ", rating=" + rating + ", website="
+				+ website + ", googleMap=" + googleMap + "]";
 	}
 
 	public int getId() {
@@ -50,6 +60,14 @@ public class Restaurant {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getAddress() {
@@ -92,12 +110,12 @@ public class Restaurant {
 		this.owner = owner;
 	}
 
-	public double getRate() {
-		return rate;
+	public double getRating() {
+		return rating;
 	}
 
-	public void setRate(double rate) {
-		this.rate = rate;
+	public void setRating(double rating) {
+		this.rating = rating;
 	}
 
 	public String getWebsite() {
